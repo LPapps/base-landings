@@ -1,32 +1,27 @@
-.card1{
+.total{
+    height: 100%;
+    width: 100%;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    width: 49%;
-    height: 90%;
-    padding: 1rem;
-    gap: .5rem;
-    border: solid 1px var(--borde);
-    background-color: var(--card);
-    border-radius: 1rem;
-}
-.card1 h4{
-    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(64,5,67,0.2) 36%, rgba(54,4,62,0.3) 60%, rgba(2,0,36,1) 100%); 
 }
 .card2{
     display: flex;
+    width: 50%;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    width: 49%;
-    height: 90%;
-    padding: 1rem;
+    padding: 2rem;
     gap: .5rem;
     border: solid 1px var(--borde);
     background-color: var(--card);   
     border-radius: 1rem;
-
+}
+.card2 h2{
+    padding-bottom: 2rem;
+    width: 100%;
+    text-align: center;
 }
 .card2 ul{
     padding-left: 1rem;
@@ -36,6 +31,10 @@
 }
 
 @media (max-width: 700px) {
+    .total{
+        height: auto;
+        padding-top: 4rem;
+    }
     .card1,.card2{
         width: 95%;
         min-height: 50%;

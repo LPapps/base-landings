@@ -1,3 +1,11 @@
+.total{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(64,5,67,0.2) 36%, rgba(54,4,62,0.3) 60%, rgba(2,0,36,1) 100%); 
+}
 .form{
     padding: 2rem;
     width: 50%;
@@ -10,6 +18,8 @@
 
 }
 .form h2{
+    width: 100%;
+    text-align: center;
     padding: 0;
     padding-bottom: 1rem;
 }
@@ -37,6 +47,11 @@
 }
 
 @media (max-width: 700px) {
+    .total{
+        height: auto;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
     .form{
         width: 95%;
     }

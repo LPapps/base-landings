@@ -1,5 +1,6 @@
 import Cryptr from "cryptr";
 import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
 
     type Login = {
       user: string,
@@ -9,6 +10,10 @@ import { NextRequest, NextResponse } from "next/server";
       id: string,
       hash: string
     }
+const nombre = z.string().min(3, {message : "nombre incorrecto"});
+const apellido = z.string().min(3, {message : "apellido incorrecto"});
+const telefono = z.string().min(9, {message : "telefono incorrecto"});
+const consulta = z.string().min(5, {message : "consulta incorrecta"});
 
 export async function POST( req: NextRequest ) {
     const { evento, data, token, id } = await req.json();
@@ -68,6 +73,15 @@ export async function POST( req: NextRequest ) {
       return NextResponse.json({ error: 'credenciales incorrectas' })
     }
     if(evento == 'agregarFormulario'){
+      try {
+        nombre.parse(data.nombre);
+        apellido.parse(data.apellido);
+        telefono.parse(data.telefono);
+        consulta.parse(data.consulta);  
+      } catch (error : any) {
+        return NextResponse.json({ e: true, componente: JSON.parse(error.message)[0].message})
+      }
+      
       const o = {
         evento,
         formulario: data,

@@ -46,7 +46,6 @@ body {
   padding-top: 4rem;
   padding-bottom: 1rem;
   overflow: hidden;
-  background: rgb(2,0,36);
   background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(64,5,67,0.2) 36%, rgba(54,4,62,0.3) 60%, rgba(2,0,36,1) 100%); 
 }
 /* CEL */

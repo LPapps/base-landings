@@ -1,22 +1,28 @@
 'use client';
 import { useState } from "react";
 import css from "./styles.module.css";
+
+
+
 export default function Formulario() {
+
   const [state, setState] = useState('Enviar Formulario');
   const [disabled, setDisabled] = useState(false);
 
   function boton(form:FormData){
     setDisabled(true);
-    setState('Enviando Formulario...');
+    setState('Checkeando inputs');
     enviarForm(form);
   }
+
   const enviarForm = async (form: FormData) => {
+
     const data = {
-      nombre: form.get("nombre"),
-      apellido : form.get("apellido"),
-      telefono : form.get("telefono"),
-      consulta : form.get("consulta")
-    }
+      nombre : form.get("nombre")?.toString(),
+      apellido : form.get("apellido")?.toString(),
+      telefono : form.get("telefono")?.toString(),
+      consulta : form.get("consulta")?.toString()
+    };
     const r = await fetch("/api", {
       method: "POST",
       headers: new Headers({ "content-type": "application/json" }),
@@ -24,10 +30,12 @@ export default function Formulario() {
     });
     const rt = await r.json();
     if(rt.g)setState('Enviado con éxito!')
-    if(rt.e){setDisabled(false);setState('Error: Reintente por favor')}   
+    if(rt.e){
+      setDisabled(false);
+      setState(`Error: ${rt.componente}`)}   
   };
   return (
-    <div id="formulario" className="total">
+    <div id="formulario" className={css.total}>
       <form action={boton} className={css.form}>
         <h2>CONTACTO</h2>
         <p>Nombre</p>

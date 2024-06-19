@@ -195,10 +195,10 @@ export default function Dashboard () {
         <div className={css.nav}>
             <button onClick={changeSideBar}>≡</button>
         </div>
-            <div ref={sb} className={css.comandos}>
-                <h1>ADMIN</h1>
-                <p>db: {state.db}</p>
-                <p>md: {state.model}</p>
+        <div ref={sb} className={css.comandos}>
+            <h1>ADMIN</h1>
+            <p>db: {state.db}</p>
+            <p>md: {state.model}</p>
             <button onClick={()=>{consulta('pedirFormularios')}}> Formularios </button>
             <button onClick={()=>{consulta('checkearPapelera')}}> Papelera </button>
             <button onClick={()=>{consulta('antiSleep')}}> Anti Sleep </button>
@@ -206,6 +206,7 @@ export default function Dashboard () {
         </div>
         <div className={css.data}>
             {viewData == 'formularios' && forms != undefined ? <Formularios /> : viewData == 'papeleras' && papelera != undefined ? <Papeleras /> : 'Nada aun...'}
-            </div></>}
+        </div>
+        </>}
     </div>
 }

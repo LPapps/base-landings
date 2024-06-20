@@ -31,7 +31,7 @@ export default function Nav() {
         <a onClick={ssb} href="#informacion">Información</a>
         <a onClick={ssb} href="#formulario">Contacto</a>
       </div>
-      <button className={css.btn} onClick={ssb}>☰</button>
+      <button className={css.btn} onClick={ssb}>≡</button>
     </div>
   );
 }

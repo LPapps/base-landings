@@ -70,11 +70,11 @@
     height: 100%;
     padding: 0 1rem;
     z-index: 99;
-    font-size: 25px;
+    font-size: 40px;
     background-color: transparent;
     border: none;
     display: none;
-    color: var(--letra);
+    color: white;
 }
 @media (width <= 750px) {
     .total{
@@ -91,6 +91,7 @@
     }
     .total button{
         display: block;
+        padding-right: 1rem;
     }
     .links{
         display: none;
